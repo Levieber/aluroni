@@ -1,7 +1,24 @@
 @import "../../styles/_variables.scss";
+@import "../../styles/_breakpoints.scss";
 
 .navbar {
-  padding: 20px $horizontal-padding;
+  padding: 20px $horizontal-padding-xlg;
+
+  @media (max-width: $desktop_xsm) {
+    padding: 20px $horizontal-padding-sm;
+  }
+
+  @media (min-width: $desktop_xsm) and (max-width: $desktop_sm) {
+    padding: 20px $horizontal-padding-md;
+  }
+
+  @media (min-width: $desktop_sm) and (max-width: $desktop_md) {
+    padding: 20px $horizontal-padding-lg;
+  }
+
+  @media (max-width: $mobile) {
+    padding: 20px $horizontal-padding-xsm;
+  }
 }
 
 .header {
@@ -14,14 +31,61 @@
   background-size: cover;
   background-repeat: no-repeat;
 
-  padding: 0 $horizontal-padding;
+  padding: 0 $horizontal-padding-xlg;
+
+  @media (max-width: $desktop_xsm) {
+    padding: 0 $horizontal-padding-sm;
+  }
+
+  @media (min-width: $desktop_xsm) and (max-width: $desktop_sm) {
+    padding: 0 $horizontal-padding-md;
+  }
+
+  @media (min-width: $desktop_sm) and (max-width: $desktop_md) {
+    padding: 0 $horizontal-padding-lg;
+  }
+
+  @media (max-width: $mobile) {
+    padding: 0 $horizontal-padding-xsm;
+  }
 
   &__text {
     color: #fff;
 
-    font-size: 5rem;
+    font-size: 4rem;
 
-    min-width: 400px;
+    min-width: calc(320px - $horizontal-padding-xlg);
     width: 40%;
+
+    @media (max-width: $desktop_xsm) {
+      font-size: 3rem;
+      width: 80%;
+    }
+  }
+}
+
+.menu {
+  padding: $horizontal-padding-xsm $horizontal-padding-xlg;
+
+  @media (max-width: $desktop_xsm) {
+    padding: $horizontal-padding-xsm $horizontal-padding-sm;
+  }
+
+  @media (min-width: $desktop_xsm) and (max-width: $desktop_sm) {
+    padding: $horizontal-padding-xsm $horizontal-padding-md;
+  }
+
+  @media (min-width: $desktop_sm) and (max-width: $desktop_md) {
+    padding: $horizontal-padding-xsm $horizontal-padding-lg;
+  }
+
+  @media (max-width: $mobile) {
+    padding: $horizontal-padding-xsm $horizontal-padding-xsm;
+  }
+
+  &__title {
+    color: $dark;
+    font-size: 3rem;
+    margin-bottom: 30px;
   }
 }
