@@ -1,10 +1,12 @@
 import styles from "./Menu.module.scss";
+import { ReactComponent as Logo } from "../../assets/logo.svg";
 
 export default function Menu() {
   return (
     <main>
-      <nav></nav>
-      <h2>Cardápio:</h2>
+      <nav className={styles.navbar}>
+        <Logo />
+      </nav>
     </main>
   );
 }
