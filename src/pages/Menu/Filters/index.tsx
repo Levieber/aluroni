@@ -1,17 +1,33 @@
 import styles from "./Filters.module.scss";
 import options from "./options.json";
+import classNames from "classnames";
 
 type IOption = typeof options[0];
 
-export default function Filters() {
+interface FiltersProps {
+  filter: number | null;
+  setFilter: React.Dispatch<React.SetStateAction<number | null>>;
+}
+
+export default function Filters({ filter, setFilter }: FiltersProps) {
   const selectFilter = (option: IOption) => {
-    console.log("Filtro selecionado:", option);
+    if (option.id === filter) {
+      setFilter(null);
+    } else {
+      setFilter(option.id);
+    }
   };
 
   return (
     <div className={styles.filters}>
       {options.map((option) => (
-        <button key={option.id} className={styles.filters__option} onClick={() => selectFilter(option)}>
+        <button
+          key={option.id}
+          className={classNames(styles.filters__option, {
+            [styles["filters__option--active"]]: option.id === filter,
+          })}
+          onClick={() => selectFilter(option)}
+        >
           {option.label}
         </button>
       ))}

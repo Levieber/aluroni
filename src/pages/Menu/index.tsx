@@ -6,6 +6,7 @@ import Filters from "./Filters";
 
 export default function Menu() {
   const [query, setQuery] = useState("");
+  const [filter, setFilter] = useState<number | null>(null);
 
   return (
     <main>
@@ -19,7 +20,7 @@ export default function Menu() {
         <h3 className={styles.menu__title}>Cardápio:</h3>
         <Search query={query} setQuery={setQuery} />
         <div className={styles.menu__filters}>
-          <Filters />
+          <Filters filter={filter} setFilter={setFilter} />
         </div>
       </section>
     </main>
