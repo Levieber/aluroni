@@ -2,6 +2,7 @@ import styles from "./Menu.module.scss";
 import { ReactComponent as Logo } from "assets/logo.svg";
 import Search from "./Search";
 import { useState } from "react";
+import Filters from "./Filters";
 
 export default function Menu() {
   const [query, setQuery] = useState("");
@@ -17,6 +18,9 @@ export default function Menu() {
       <section className={styles.menu}>
         <h3 className={styles.menu__title}>Cardápio:</h3>
         <Search query={query} setQuery={setQuery} />
+        <div className={styles.menu__filters}>
+          <Filters />
+        </div>
       </section>
     </main>
   );
