@@ -9,7 +9,7 @@ import Items from "./Items";
 export default function Menu() {
   const [query, setQuery] = useState("");
   const [filter, setFilter] = useState<number | null>(null);
-  const [sortBy, setSortBy] = useState<string>("");
+  const [sortBy, setSortBy] = useState("");
 
   return (
     <main>
@@ -27,7 +27,7 @@ export default function Menu() {
           <Sort sortBy={sortBy} setSortBy={setSortBy} />
         </div>
         <div>
-          <Items />
+          <Items query={query} filter={filter} sortBy={sortBy} />
         </div>
       </section>
     </main>
