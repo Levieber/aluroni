@@ -24,20 +24,30 @@ export default function Items({ query, filter, sortBy }: ItemsProps) {
     return categoryId === filter;
   };
 
-  const sort = (menu: typeof data) => {
+  const sort = (
+    menu: typeof data,
+    property: keyof Pick<typeof menu[0], "size" | "serving" | "price">,
+    type: "asc" | "desc"
+  ) => {
+    if (type === "desc") return menu.sort((a, b) => b[property] - a[property]);
+
+    return menu.sort((a, b) => a[property] - b[property]);
+  };
+
+  const handleSort = (menu: typeof data) => {
     switch (sortBy) {
       case "portion_asc":
-        return menu.sort((a, b) => a.size - b.size);
+        return sort(menu, "size", "asc");
       case "portion_desc":
-        return menu.sort((a, b) => b.size - a.size);
+        return sort(menu, "size", "desc");
       case "qtd_person_asc":
-        return menu.sort((a, b) => a.serving - b.serving);
+        return sort(menu, "serving", "asc");
       case "qtd_person_desc":
-        return menu.sort((a, b) => b.serving - a.serving);
+        return sort(menu, "serving", "desc");
       case "price_asc":
-        return menu.sort((a, b) => a.price - b.price);
+        return sort(menu, "price", "asc");
       case "price_desc":
-        return menu.sort((a, b) => b.price - a.price);
+        return sort(menu, "price", "desc");
       default:
         return menu;
     }
@@ -46,7 +56,7 @@ export default function Items({ query, filter, sortBy }: ItemsProps) {
   useEffect(() => {
     const filteredMenu = data.filter((item) => handleSearch(item.title) && handleFilter(item.category.id));
 
-    setMenu(sort(filteredMenu));
+    setMenu(handleSort(filteredMenu));
   }, [query, filter, sortBy]);
 
   return (
