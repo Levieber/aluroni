@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { SortOptions } from "../Sort";
 import Item from "./Item";
 import styles from "./Items.module.scss";
 import data from "./menu.json";
@@ -6,7 +7,7 @@ import data from "./menu.json";
 interface ItemsProps {
   query: string;
   filter: number | null;
-  sortBy: string;
+  sortBy: SortOptions;
 }
 
 export default function Items({ query, filter, sortBy }: ItemsProps) {
