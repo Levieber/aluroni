@@ -4,6 +4,7 @@ import Search from "./Search";
 import { useState } from "react";
 import Filters from "./Filters";
 import Sort from "./Sort";
+import Items from "./Items";
 
 export default function Menu() {
   const [query, setQuery] = useState("");
@@ -24,6 +25,9 @@ export default function Menu() {
         <div className={styles.menu__filters}>
           <Filters filter={filter} setFilter={setFilter} />
           <Sort sortBy={sortBy} setSortBy={setSortBy} />
+        </div>
+        <div>
+          <Items />
         </div>
       </section>
     </main>
