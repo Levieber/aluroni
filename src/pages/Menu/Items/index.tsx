@@ -24,9 +24,30 @@ export default function Items({ query, filter, sortBy }: ItemsProps) {
     return categoryId === filter;
   };
 
+  const sort = (menu: typeof data) => {
+    switch (sortBy) {
+      case "portion_asc":
+        return menu.sort((a, b) => a.size - b.size);
+      case "portion_desc":
+        return menu.sort((a, b) => b.size - a.size);
+      case "qtd_person_asc":
+        return menu.sort((a, b) => a.serving - b.serving);
+      case "qtd_person_desc":
+        return menu.sort((a, b) => b.serving - a.serving);
+      case "price_asc":
+        return menu.sort((a, b) => a.price - b.price);
+      case "price_desc":
+        return menu.sort((a, b) => b.price - a.price);
+      default:
+        return menu;
+    }
+  };
+
   useEffect(() => {
-    setMenu(data.filter((item) => handleSearch(item.title) && handleFilter(item.category.id)));
-  }, [query, filter]);
+    const filteredMenu = data.filter((item) => handleSearch(item.title) && handleFilter(item.category.id));
+
+    setMenu(sort(filteredMenu));
+  }, [query, filter, sortBy]);
 
   return (
     <div className={styles.items}>
