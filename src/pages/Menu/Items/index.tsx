@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { SortOptions } from "../Sort";
 import Item from "./Item";
 import styles from "./Items.module.scss";
-import data from "./menu.json";
+import data from "data/menu.json";
 
 interface ItemsProps {
   query: string;

@@ -1,6 +1,6 @@
 import styles from "./Item.module.scss";
 import classNames from "classnames";
-import menu from "../menu.json";
+import menu from "data/menu.json";
 
 type ItemProps = typeof menu[0];
 
