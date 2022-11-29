@@ -1,0 +1,56 @@
+@import "../../styles/_variables.scss";
+@import "../../styles/_breakpoints.scss";
+
+.header {
+  display: flex;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+  align-items: center;
+
+  padding: 20px $horizontal-padding-xlg;
+
+  @media (max-width: $desktop_xsm) {
+    padding: 20px $horizontal-padding-sm;
+  }
+
+  @media (min-width: $desktop_xsm) and (max-width: $desktop_sm) {
+    padding: 20px $horizontal-padding-md;
+  }
+
+  @media (min-width: $desktop_sm) and (max-width: $desktop_md) {
+    padding: 20px $horizontal-padding-lg;
+  }
+
+  @media (max-width: $mobile) {
+    justify-content: center;
+  }
+
+  .navbar {
+    &__links {
+      padding-left: 0;
+      align-items: center;
+      display: flex;
+      gap: 1rem;
+    }
+
+    &__item {
+      list-style-type: none;
+
+      &__link {
+        color: $dark-red;
+        font-size: 24px;
+        font-weight: 600;
+        text-decoration: none;
+        transition: 0.2s ease;
+
+        &:hover {
+          color: $red;
+        }
+
+        &--active {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}

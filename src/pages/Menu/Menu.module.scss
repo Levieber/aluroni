@@ -1,33 +1,13 @@
 @import "../../styles/_variables.scss";
 @import "../../styles/_breakpoints.scss";
 
-.navbar {
-  padding: 20px $horizontal-padding-xlg;
-
-  @media (max-width: $desktop_xsm) {
-    padding: 20px $horizontal-padding-sm;
-  }
-
-  @media (min-width: $desktop_xsm) and (max-width: $desktop_sm) {
-    padding: 20px $horizontal-padding-md;
-  }
-
-  @media (min-width: $desktop_sm) and (max-width: $desktop_md) {
-    padding: 20px $horizontal-padding-lg;
-  }
-
-  @media (max-width: $mobile) {
-    padding: 20px $horizontal-padding-xsm;
-  }
-}
-
-.header {
+.banner {
   display: flex;
   align-items: center;
 
   height: 300px;
 
-  background-image: url("/src/assets/menu/header.png");
+  background-image: url("/src/assets/banner.png");
   background-size: cover;
   background-repeat: no-repeat;
 
