@@ -1,10 +1,4 @@
-@import "../../styles/_variables.scss";
-
-.title {
-  color: $dark;
-  font-size: 3rem;
-  margin-bottom: 30px;
-}
+@import "../../styles/variables";
 
 .recommendations {
   border-radius: 2px;
@@ -16,7 +10,6 @@
 
 .recommended {
   &__image {
-    width: 300px;
     margin-bottom: 10px;
 
     img {

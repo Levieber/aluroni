@@ -4,6 +4,7 @@ import { useState } from "react";
 import Filters from "./Filters";
 import Sort, { SortOptions } from "./Sort";
 import Items from "./Items";
+import theme from "styles/Theme.module.scss";
 
 export default function Menu() {
   const [query, setQuery] = useState("");
@@ -11,8 +12,8 @@ export default function Menu() {
   const [sortBy, setSortBy] = useState<SortOptions>("");
 
   return (
-    <section className={styles.menu}>
-      <h3 className={styles.menu__title}>Cardápio:</h3>
+    <section>
+      <h3 className={theme.title}>Cardápio:</h3>
       <Search query={query} setQuery={setQuery} />
       <div className={styles.menu__filters}>
         <Filters filter={filter} setFilter={setFilter} />

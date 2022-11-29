@@ -1,0 +1,30 @@
+@import "./variables";
+@import "./breakpoints";
+
+.container {
+  padding: $horizontal-padding-xsm $horizontal-padding-xlg;
+
+  @media (max-width: $desktop_xsm) {
+    padding: $horizontal-padding-xsm $horizontal-padding-sm;
+  }
+
+  @media (min-width: $desktop_xsm) and (max-width: $desktop_sm) {
+    padding: $horizontal-padding-xsm $horizontal-padding-md;
+  }
+
+  @media (min-width: $desktop_sm) and (max-width: $desktop_md) {
+    padding: $horizontal-padding-xsm $horizontal-padding-lg;
+  }
+
+  @media (max-width: $mobile) {
+    padding: $horizontal-padding-xsm $horizontal-padding-xsm;
+  }
+}
+
+.title {
+  color: $dark;
+  font-size: 2.3rem;
+  margin-bottom: 30px;
+
+  word-wrap: break-word;
+}

@@ -1,5 +1,6 @@
 import styles from "./Home.module.scss";
 import menu from "data/menu.json";
+import theme from "styles/Theme.module.scss";
 
 function shuffle(array: typeof menu) {
   const shuffledArray = [...array];
@@ -16,7 +17,7 @@ function shuffle(array: typeof menu) {
 export default function Home() {
   return (
     <section>
-      <h3 className={styles.title}>Recomendações da cozinha</h3>
+      <h3 className={theme.title}>Recomendações da cozinha</h3>
       <div className={styles.recommendations}>
         {shuffle(menu)
           .splice(0, 3)
