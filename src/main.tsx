@@ -1,10 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import AppRouter from "routes";
 import "./index.css";
-import Menu from "./pages/Menu";
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
-    <Menu />
+    <AppRouter />
   </React.StrictMode>
 );
