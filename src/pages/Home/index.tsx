@@ -1,7 +1,7 @@
 import styles from "./Home.module.scss";
 import menu from "data/menu.json";
 import theme from "styles/Theme.module.scss";
-import ourHome from "assets/our_home.png";
+import ourHome from "assets/home/our_home.png";
 
 function shuffle(array: typeof menu) {
   const shuffledArray = [...array];
