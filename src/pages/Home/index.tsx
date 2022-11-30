@@ -1,6 +1,7 @@
 import styles from "./Home.module.scss";
 import menu from "data/menu.json";
 import theme from "styles/Theme.module.scss";
+import ourHome from "assets/our_home.png";
 
 function shuffle(array: typeof menu) {
   const shuffledArray = [...array];
@@ -29,6 +30,14 @@ export default function Home() {
               <button className={styles.recommended__button}>Ver mais</button>
             </div>
           ))}
+      </div>
+      <h3 className={theme.title}>Nossa casa</h3>
+      <div className={styles.ourHome}>
+        <img src={ourHome} alt="Interior do Aluroni" />
+        <address className={styles.ourHome__address}>
+          Rua Ziriguidum, 777 <br />
+          Nidavellir, Svartalfheim
+        </address>
       </div>
     </section>
   );
