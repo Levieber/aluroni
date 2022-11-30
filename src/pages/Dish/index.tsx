@@ -1,9 +1,9 @@
 import styles from "./Dish.module.scss";
 import { useNavigate, useParams } from "react-router-dom";
 import { MdKeyboardArrowLeft } from "react-icons/md";
-import classNames from "classnames";
 import menu from "data/menu.json";
 import NotFound from "pages/NotFound";
+import Tags from "components/Tags";
 
 export default function Dish() {
   const navigate = useNavigate();
@@ -14,7 +14,7 @@ export default function Dish() {
 
   if (!dish) return <NotFound />;
 
-  const { title, photo, description, category, size, serving, price } = dish;
+  const { title, photo, description, ...tags } = dish;
 
   return (
     <>
@@ -28,21 +28,7 @@ export default function Dish() {
         </div>
         <div className={styles.content}>
           <p className={styles.content__description}>{description}</p>
-          <div className={styles.tags}>
-            <div
-              className={classNames(styles.tags__type, {
-                [styles[`tags__type__${category.value}` as keyof typeof styles]]:
-                  `tags__type__${category.value}` in styles,
-              })}
-            >
-              {category.label}
-            </div>
-            <div className={styles.tags__portion}>{size}g</div>
-            <div className={styles.tags__qtdperson}>
-              Serve {serving} pessoa{serving === 1 ? "" : "s"}
-            </div>
-            <div className={styles.tags__value}>R$ {price.toFixed(2)}</div>
-          </div>
+          <Tags {...tags} />
         </div>
       </section>
     </>
