@@ -4,6 +4,7 @@ import { MdKeyboardArrowLeft } from "react-icons/md";
 import menu from "data/menu.json";
 import NotFound from "pages/NotFound";
 import Tags from "components/Tags";
+import Layout from "components/Layout";
 
 export default function Dish() {
   const navigate = useNavigate();
@@ -17,7 +18,7 @@ export default function Dish() {
   const { title, photo, description, ...tags } = dish;
 
   return (
-    <>
+    <Layout>
       <button className={styles.goBack} onClick={() => navigate(-1)}>
         <MdKeyboardArrowLeft /> Voltar
       </button>
@@ -31,6 +32,6 @@ export default function Dish() {
           <Tags {...tags} />
         </div>
       </section>
-    </>
+    </Layout>
   );
 }
