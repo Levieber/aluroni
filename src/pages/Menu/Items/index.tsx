@@ -3,6 +3,7 @@ import { SortOptions } from "../Sort";
 import Item from "./Item";
 import styles from "./Items.module.scss";
 import data from "data/menu.json";
+import { Dish } from "types/Dish";
 
 interface ItemsProps {
   query: string;
@@ -26,8 +27,8 @@ export default function Items({ query, filter, sortBy }: ItemsProps) {
   };
 
   const sort = (
-    menu: typeof data,
-    property: keyof Pick<typeof menu[0], "size" | "serving" | "price">,
+    menu: Dish[],
+    property: keyof Pick<Dish, "size" | "serving" | "price">,
     type: "asc" | "desc"
   ) => {
     if (type === "desc") return menu.sort((a, b) => b[property] - a[property]);
@@ -35,7 +36,7 @@ export default function Items({ query, filter, sortBy }: ItemsProps) {
     return menu.sort((a, b) => a[property] - b[property]);
   };
 
-  const handleSort = (menu: typeof data) => {
+  const handleSort = (menu: Dish[]) => {
     switch (sortBy) {
       case "portion_asc":
         return sort(menu, "size", "asc");

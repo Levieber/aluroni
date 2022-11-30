@@ -3,8 +3,9 @@ import menu from "data/menu.json";
 import theme from "styles/Theme.module.scss";
 import ourHome from "assets/home/our_home.png";
 import { useNavigate } from "react-router-dom";
+import { Dish } from "types/Dish";
 
-function shuffle(array: typeof menu) {
+function shuffle(array: Dish[]) {
   const shuffledArray = [...array];
 
   for (let i = array.length - 1; i > 0; i--) {
