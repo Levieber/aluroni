@@ -2,6 +2,7 @@ import styles from "./Home.module.scss";
 import menu from "data/menu.json";
 import theme from "styles/Theme.module.scss";
 import ourHome from "assets/home/our_home.png";
+import { useNavigate } from "react-router-dom";
 
 function shuffle(array: typeof menu) {
   const shuffledArray = [...array];
@@ -16,6 +17,8 @@ function shuffle(array: typeof menu) {
 }
 
 export default function Home() {
+  const navigate = useNavigate();
+
   return (
     <section>
       <h3 className={theme.title}>Recomendações da cozinha</h3>
@@ -27,7 +30,9 @@ export default function Home() {
               <div className={styles.recommended__image}>
                 <img src={photo} alt={title} />
               </div>
-              <button className={styles.recommended__button}>Ver mais</button>
+              <button className={styles.recommended__button} onClick={() => navigate(`/dish/${id}`)}>
+                Ver mais
+              </button>
             </div>
           ))}
       </div>
