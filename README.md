@@ -66,11 +66,11 @@ Para baixar, executar e modificar o projeto, você precisa ter instalado em sua 
 
 1. Clone o repositório
 ```
-git clone https://github.com/Levieber/study-timer.git
+git clone https://github.com/Levieber/aluroni.git
 ```
 2. Acesse a pasta do projeto
 ```
-cd study-timer
+cd aluroni
 ```
 3. Instale as depedências
 ```
