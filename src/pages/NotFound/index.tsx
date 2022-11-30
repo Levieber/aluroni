@@ -15,7 +15,7 @@ export default function NotFound() {
           <MdArrowLeft /> Voltar
         </button>
       </div>
-      <NotFoundImg className={styles.container__image} />
+      <NotFoundImg />
     </div>
   );
 }
