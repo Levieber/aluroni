@@ -1,0 +1,34 @@
+@import "../../styles/variables";
+@import "../../styles/breakpoints";
+
+.footer {
+  background-color: $red;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px $horizontal-padding-xlg;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+
+  @media (max-width: $desktop_xsm) {
+    padding: 10px $horizontal-padding-sm;
+  }
+
+  @media (min-width: $desktop_xsm) and (max-width: $desktop_sm) {
+    padding: 10px $horizontal-padding-md;
+  }
+
+  @media (min-width: $desktop_sm) and (max-width: $desktop_md) {
+    padding: 10px $horizontal-padding-lg;
+  }
+
+  @media (max-width: $mobile) {
+    justify-content: center;
+  }
+
+  p {
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+  }
+}
