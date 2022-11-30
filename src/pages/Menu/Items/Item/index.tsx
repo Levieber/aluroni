@@ -1,10 +1,13 @@
 import styles from "./Item.module.scss";
 import { Dish } from "types/Dish";
 import Tags from "components/Tags";
+import { useNavigate } from "react-router-dom";
 
-export default function Item({ title, description, photo, ...tags }: Dish) {
+export default function Item({ id, title, description, photo, ...tags }: Dish) {
+  const navigate = useNavigate();
+
   return (
-    <div className={styles.item}>
+    <div className={styles.item} onClick={() => navigate(`/dish/${id}`)}>
       <div className={styles.item__image}>
         <img src={photo} alt={title} />
       </div>

@@ -2,13 +2,20 @@
 @import "../../../../styles/breakpoints";
 
 .item {
+  align-items: center;
+  border-radius: 10px;
+  cursor: pointer;
   display: flex;
   flex-wrap: wrap;
+  padding: 20px;
+  transition: 0.2s ease-in;
   width: 90%;
 
-  &__image {
-    min-width: 240px;
+  &:hover {
+    background-color: $grey;
+  }
 
+  &__image {
     @media (max-width: $desktop_xsm) {
       width: 100%;
     }
