@@ -3,22 +3,22 @@ import { ReactComponent as Logo } from "assets/logo.svg";
 import { NavLink } from "react-router-dom";
 import classNames from "classnames";
 
-export default function Header() {
-  const routes = [
-    {
-      label: "Início",
-      to: "/",
-    },
-    {
-      label: "Cardápio",
-      to: "/menu",
-    },
-    {
-      label: "Sobre",
-      to: "/about",
-    },
-  ];
+const routes = [
+  {
+    label: "Início",
+    to: "/",
+  },
+  {
+    label: "Cardápio",
+    to: "/menu",
+  },
+  {
+    label: "Sobre",
+    to: "/about",
+  },
+];
 
+export default function Header() {
   return (
     <header className={styles.header}>
       <Logo />
