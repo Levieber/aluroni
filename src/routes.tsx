@@ -5,6 +5,7 @@ import Header from "components/Header";
 import Layout from "components/Layout";
 import About from "pages/About";
 import Footer from "components/Footer";
+import NotFound from "pages/NotFound";
 
 export default function AppRouter() {
   return (
@@ -16,6 +17,7 @@ export default function AppRouter() {
           <Route path="menu" element={<Menu />} />
           <Route path="about" element={<About />} />
         </Route>
+        <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
     </Router>
