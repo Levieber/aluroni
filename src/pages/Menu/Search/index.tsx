@@ -1,12 +1,15 @@
 import styles from "./Search.module.scss";
 import { CgSearch } from "react-icons/cg";
+import { memo, useMemo } from "react";
 
 interface SearchProps {
   query: string;
   setQuery: React.Dispatch<React.SetStateAction<string>>;
 }
 
-export default function Search({ query, setQuery }: SearchProps) {
+function Search({ query, setQuery }: SearchProps) {
+  const SearchIcon = useMemo(() => <CgSearch size={20} color="#4C4D5E" />, []);
+
   return (
     <div className={styles.search}>
       <input
@@ -15,7 +18,9 @@ export default function Search({ query, setQuery }: SearchProps) {
         onChange={(ev) => setQuery(ev.target.value)}
         placeholder="O que vai querer hoje?"
       />
-      <CgSearch size={20} color="#4C4D5E" />
+      {SearchIcon}
     </div>
   );
 }
+
+export default memo(Search);
