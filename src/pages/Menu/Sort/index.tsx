@@ -1,7 +1,7 @@
 import styles from "./Sort.module.scss";
 import options from "./options.json";
 import classNames from "classnames";
-import { useState } from "react";
+import { memo, useState } from "react";
 import { MdKeyboardArrowUp, MdKeyboardArrowDown } from "react-icons/md";
 
 const avaibleOptions = [
@@ -25,7 +25,7 @@ function isSortOption(value: string): value is SortOptions {
   return avaibleOptions.some((option) => option === value);
 }
 
-export default function Sort({ sortBy, setSortBy }: SortProps) {
+function Sort({ sortBy, setSortBy }: SortProps) {
   const [isOpen, setIsOpen] = useState(false);
   const sortName = sortBy && options.find((option) => option.value === sortBy)?.name;
 
@@ -56,3 +56,5 @@ export default function Sort({ sortBy, setSortBy }: SortProps) {
     </button>
   );
 }
+
+export default memo(Sort);
