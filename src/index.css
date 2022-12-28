@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Italiana&family=Josefin+Sans:wght@300;400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Italiana&family=Josefin+Sans:wght@300;400;700&display=swap");
 @import "@csstools/normalize.css/opinionated.css";
 
 body {
@@ -14,4 +14,8 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+}
+
+main {
+  flex-grow: 1;
 }
