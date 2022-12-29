@@ -2,9 +2,11 @@ import styles from "./Dish.module.scss";
 import { useNavigate, useParams } from "react-router-dom";
 import { MdKeyboardArrowLeft } from "react-icons/md";
 import menu from "data/menu.json";
-import NotFound from "pages/NotFound";
-import Tags from "components/Tags";
-import Layout from "components/Layout";
+import { lazy } from "react";
+
+const NotFound = lazy(() => import("pages/NotFound"));
+const Layout = lazy(() => import("components/Layout"));
+const Tags = lazy(() => import("components/Tags"));
 
 export default function Dish() {
   const navigate = useNavigate();
