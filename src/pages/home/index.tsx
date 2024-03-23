@@ -1,4 +1,6 @@
-import ourHome from "@/assets/home/our-home.png";
+import ourHomeSrcsetAvif from "@/assets/home/our-home.png?w=500;700;900;1200&format=avif&as=srcset";
+import ourHomeSrcsetWebp from "@/assets/home/our-home.png?w=500;700;900;1200&format=webp&as=srcset";
+import ourHome from "@/assets/home/our-home.png?w=500;700;900;1200&as=metadata";
 import menu from "@/data/menu.json";
 import theme from "@/styles/theme.module.scss";
 import type { Dish } from "@/types/dish";
@@ -29,7 +31,11 @@ export default function Home() {
 					.map(({ id, photo, title }) => (
 						<div key={id}>
 							<div className={styles.recommended__image}>
-								<img src={photo} alt={title} />
+								<picture>
+									<source srcSet={`${photo}.avif`} type="image/avif" />
+									<source srcSet={`${photo}.webp`} type="image/webp" />
+									<img src={`${photo}.png`} alt={title} />
+								</picture>
 							</div>
 							<button
 								type="button"
@@ -43,7 +49,16 @@ export default function Home() {
 			</div>
 			<h3 className={theme.title}>Nossa casa</h3>
 			<div className={styles.ourHome}>
-				<img src={ourHome} alt="Interior do Aluroni" />
+				<picture>
+					<source srcSet={ourHomeSrcsetAvif} type="image/avif" />
+					<source srcSet={ourHomeSrcsetWebp} type="image/webp" />
+					<img
+						src={ourHome.src}
+						width={ourHome.width}
+						height={ourHome.height}
+						alt="Interior do Aluroni"
+					/>
+				</picture>
 				<address className={styles.ourHome__address}>
 					Rua Ziriguidum, 777 <br />
 					Nidavellir, Svartalfheim

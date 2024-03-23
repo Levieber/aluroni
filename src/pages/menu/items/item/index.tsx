@@ -9,7 +9,11 @@ function Item({ id, title, description, photo, ...tags }: Dish) {
 		<Link to={`/dish/${id}`}>
 			<div className={styles.item}>
 				<div className={styles.item__image}>
-					<img src={photo} alt={title} />
+					<picture>
+						<source srcSet={`${photo}.avif`} type="image/avif" />
+						<source srcSet={`${photo}.webp`} type="image/webp" />
+						<img src={`${photo}.png`} alt={title} />
+					</picture>
 				</div>
 				<div className={styles.item__description}>
 					<div className={styles.item__title}>

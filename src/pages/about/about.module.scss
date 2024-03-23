@@ -2,15 +2,19 @@
 
 .aboutUs {
   display: flex;
+  flex-wrap: wrap;
   gap: 20px;
   margin-bottom: 50px;
 
-  @media (max-width: $desktop_md) {
-    flex-wrap: wrap;
+  picture {
+    width: 100%;
+    max-width: 700px;
+  }
 
-    img {
-      width: 100%;
-    }
+  img {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 5px;
   }
 
   &__text {
@@ -34,15 +38,5 @@
 .images {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
-  justify-content: space-between;
-
-  &__image {
-    width: 600px;
-
-    img {
-      border-radius: 5px;
-      width: 100%;
-    }
-  }
+  gap: 30px;
 }

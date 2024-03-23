@@ -31,7 +31,11 @@ export default function Dish() {
 			<section className={styles.container}>
 				<h1 className={styles.title}>{title}</h1>
 				<div className={styles.image}>
-					<img src={photo} alt={title} />
+					<picture>
+						<source srcSet={`${photo}.avif`} type="image/avif" />
+						<source srcSet={`${photo}.webp`} type="image/webp" />
+						<img src={`${photo}.png`} alt={title} />
+					</picture>
 				</div>
 				<div className={styles.content}>
 					<p className={styles.content__description}>{description}</p>
