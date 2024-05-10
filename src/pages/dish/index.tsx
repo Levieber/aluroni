@@ -5,7 +5,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import styles from "./dish.module.scss";
 
 const NotFound = lazy(() => import("@/pages/not-found"));
-const Layout = lazy(() => import("@/components/layout"));
+const Layout = lazy(() => import("@/components/layout/banner-layout"));
 const Tags = lazy(() => import("@/components/tags"));
 
 export default function Dish() {

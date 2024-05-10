@@ -1,11 +1,13 @@
-import theme from "@/styles/theme.module.scss";
+import banner from "@/assets/banner.png?w=500;700;900;1200&as=metadata";
 import bannerSrcsetAvif from "@/assets/banner.png?w=500;700;900;1200&format=avif&as=srcset";
 import bannerSrcsetWebp from "@/assets/banner.png?w=500;700;900;1200&format=webp&as=srcset";
-import banner from "@/assets/banner.png?w=500;700;900;1200&as=metadata";
+import theme from "@/styles/theme.module.scss";
 import { Outlet } from "react-router-dom";
-import styles from "./layout.module.scss";
+import styles from "./banner-layout.module.scss";
 
-export default function Layout({ children }: { children?: React.ReactNode }) {
+export default function BannerLayout({
+	children,
+}: { children?: React.ReactNode }) {
 	return (
 		<main>
 			<div className={styles.banner}>

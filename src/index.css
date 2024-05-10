@@ -21,11 +21,13 @@ main {
 }
 
 .loading {
-  flex-grow: 1;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+}
 
+.loading p {
   font-size: 2rem;
   font-weight: bold;
 }

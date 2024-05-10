@@ -1,10 +1,18 @@
-import AppRouter from "@/routes";
+import router from "@/routes";
 import React from "react";
 import ReactDOM from "react-dom/client";
+import { RouterProvider } from "react-router-dom";
 import "./index.css";
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
 	<React.StrictMode>
-		<AppRouter />
+		<RouterProvider
+			router={router}
+			fallbackElement={
+				<div className="loading">
+					<p>Carregando...</p>
+				</div>
+			}
+		/>
 	</React.StrictMode>,
 );

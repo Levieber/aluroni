@@ -1,7 +1,7 @@
+import { clsx } from "clsx";
 import { memo } from "react";
 import styles from "./filters.module.scss";
 import options from "./options.json";
-import { clsx } from "clsx";
 
 type IOption = (typeof options)[0];
 

@@ -1,6 +1,6 @@
+import ourHome from "@/assets/home/our-home.png?w=500;700;900;1200&as=metadata";
 import ourHomeSrcsetAvif from "@/assets/home/our-home.png?w=500;700;900;1200&format=avif&as=srcset";
 import ourHomeSrcsetWebp from "@/assets/home/our-home.png?w=500;700;900;1200&format=webp&as=srcset";
-import ourHome from "@/assets/home/our-home.png?w=500;700;900;1200&as=metadata";
 import menu from "@/data/menu.json";
 import theme from "@/styles/theme.module.scss";
 import type { Dish } from "@/types/dish";

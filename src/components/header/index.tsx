@@ -1,5 +1,5 @@
 import Logo from "@/assets/logo.svg?react";
-import { clsx } from 'clsx';
+import { clsx } from "clsx";
 import { NavLink } from "react-router-dom";
 import styles from "./header.module.scss";
 

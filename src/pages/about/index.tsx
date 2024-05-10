@@ -1,12 +1,12 @@
+import home from "@/assets/about/home.png?w=250;350&h=200;450&as=metadata";
 import homeSrcsetAvif from "@/assets/about/home.png?w=250;350&h=200;450&format=avif&as=srcset";
 import homeSrcsetWebp from "@/assets/about/home.png?w=250;350&h=200;450&format=webp&as=srcset";
-import home from "@/assets/about/home.png?w=250;350&h=200;450&as=metadata";
+import pasta1 from "@/assets/about/pasta1.png?w=250&h=250&as=metadata";
 import pasta1SrcsetAvif from "@/assets/about/pasta1.png?w=250&h=250&format=avif&as=srcset";
 import pasta1SrcsetWebp from "@/assets/about/pasta1.png?w=250&h=250&format=webp&as=srcset";
-import pasta1 from "@/assets/about/pasta1.png?w=250&h=250&as=metadata";
+import pasta2 from "@/assets/about/pasta2.png?w=250&h=250&as=metadata";
 import pasta2SrcsetAvif from "@/assets/about/pasta2.png?w=250&h=250&format=avif&as=srcset";
 import pasta2SrcsetWebp from "@/assets/about/pasta2.png?w=3500&format=webp&as=srcset";
-import pasta2 from "@/assets/about/pasta2.png?w=250&h=250&as=metadata";
 import theme from "@/styles/theme.module.scss";
 import styles from "./about.module.scss";
 
